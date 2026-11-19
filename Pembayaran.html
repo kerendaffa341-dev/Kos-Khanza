@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pembayaran - Warung Makan Berkah</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="kartu-warung" style="max-width: 480px;">
+    <div class="isi-konten">
+      <a href="index.html" class="tombol-kembali">Kembali Ubah Menu</a>
+      
+      <h1>Metode Pembayaran</h1>
+      <p class="deskripsi">Periksa rincian pesananmu lalu pilih cara pembayaran.</p>
+
+      <!-- Ringkasan Pesanan dari Halaman Sebelumnya -->
+      <div class="kotak-ringkasan">
+        <p><strong>Atas Nama / Meja:</strong> <span id="tampilNama">-</span></p>
+        <pre id="tampilRincian" class="teks-rincian"></pre>
+        <hr>
+        <div class="kotak-total" style="margin: 10px 0 0 0;">
+          <span>Total Tagihan:</span>
+          <strong id="tampilTotal">Rp 0</strong>
+        </div>
+      </div>
+
+      <h3>Pilih Cara Bayar</h3>
+
+      <!-- Dua Pilihan Pembayaran -->
+      <div class="pilihan-bayar">
+        <div id="pilihQris" class="kartu-metode aktif">
+          <strong>Bayar via QRIS</strong>
+          <p>Scan barcode QRIS & kirim bukti</p>
+        </div>
+
+        <div id="pilihPelayan" class="kartu-metode">
+          <strong>Panggil Pelayan</strong>
+          <p>Bayar tunai di meja / kasir</p>
+        </div>
+      </div>
+
+      <!-- Tampilan Khusus Jika Memilih QRIS -->
+      <div id="kotakQris" class="kotak-info-bayar">
+        <p><strong>Scan QRIS Warung Makan Berkah:</strong></p>
+        <img src="qris.jpg" alt="Barcode QRIS Warung" class="gambar-qris">
+        <p class="catatan-kecil">Setelah melakukan transfer sesuai total tagihan, klik tombol hijau di bawah untuk mengirim pesanan dan lampirkan bukti bayar di WhatsApp.</p>
+      </div>
+
+      <!-- Tampilan Khusus Jika Memilih Panggil Pelayan -->
+      <div id="kotakPelayan" class="kotak-info-bayar" style="display: none;">
+        <p><strong>Panggil Pelayan / Bayar Tunai</strong></p>
+        <p class="catatan-kecil">Klik tombol hijau di bawah agar pesananmu langsung masuk ke dapur dan pelayan kami segera menghampiri mejamu untuk pembayaran tunai.</p>
+      </div>
+
+      <button id="btnKonfirmasiWa" class="tombol-wa">Konfirmasi Pesanan via WhatsApp</button>
+    </div>
+  </div>
+
+  <script src="pembayaran.js"></script>
+</body>
+</html>

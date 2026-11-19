@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Warung Makan Berkah</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="kartu-warung">
+    <img src="menu1.jpg" alt="Banner Warung" class="foto-banner">
+    
+    <div class="isi-konten">
+      <span class="label-buka">Buka • 08.00 - 21.00 WIB</span>
+      <h1>Warung Makan Berkah</h1>
+      <p class="deskripsi">Masakan rumahan hangat, porsi pas, harga bersahabat.</p>
+
+      <hr>
+
+      <h3>Pilih Menu Pesanan</h3>
+
+      <!-- 1. KATEGORI MAIN COURSE -->
+      <h4 class="judul-kategori">Main Course</h4>
+      <div class="wadah-menu-samping">
+        <div class="baris-menu">
+          <div>
+            <strong>Nasi Goreng</strong>
+            <p class="harga">Rp 15.000</p>
+          </div>
+          <input type="number" id="qty1" min="0" value="0" class="kotak-jumlah">
+        </div>
+
+        <div class="baris-menu">
+          <div>
+            <strong>Mie Goreng</strong>
+            <p class="harga">Rp 10.000</p>
+          </div>
+          <input type="number" id="qty2" min="0" value="0" class="kotak-jumlah">
+        </div>
+
+        <div class="baris-menu">
+          <div>
+            <strong>Indomie Goreng + Telur </strong>
+            <p class="harga">Rp 10.000</p>
+          </div>
+          <input type="number" id="qty3" min="0" value="0" class="kotak-jumlah">
+        </div>
+      </div>
+
+              <div class="baris-menu">
+          <div>
+            <strong>Nasi Teriyaki</strong>
+            <p class="harga">Rp 10.000</p>
+          </div>
+          <input type="number" id="qty4" min="0" value="0" class="kotak-jumlah">
+        </div>
+      </div>
+      
+              <div class="baris-menu">
+          <div>
+            <strong>Nasi Ayam Crispy </strong>
+            <p class="harga">Rp 15.000</p>
+          </div>
+          <input type="number" id="qty5" min="0" value="0" class="kotak-jumlah">
+        </div>
+      </div>
+
+      <!-- 2. KATEGORI SNACK -->
+      <h4 class="judul-kategori">Snack</h4>
+      <div class="wadah-menu-samping">
+        <div class="baris-menu">
+          <div>
+            <strong>Kentang Goreng Keju</strong>
+            <p class="harga">Rp 15.000</p>
+          </div>
+          <input type="number" id="qty6" min="0" value="0" class="kotak-jumlah">
+        </div>
+
+        <div class="baris-menu">
+          <div>
+            <strong>Pisang goreng</strong>
+            <p class="harga">Rp 10.000</p>
+          </div>
+          <input type="number" id="qty7" min="0" value="0" class="kotak-jumlah">
+        </div>
+      </div>
+
+              <div class="baris-menu">
+          <div>
+            <strong>Roti Bakar</strong>
+            <p class="harga">Rp 10.000</p>
+          </div>
+          <input type="number" id="qty8" min="0" value="0" class="kotak-jumlah">
+        </div>
+      </div>
+
+              <div class="baris-menu">
+          <div>
+            <strong>Singkong</strong>
+            <p class="harga">Rp 10.000</p>
+          </div>
+          <input type="number" id="qty9" min="0" value="0" class="kotak-jumlah">
+        </div>
+      </div>
+
+              <div class="baris-menu">
+          <div>
+            <strong>Gethuk Goreng</strong>
+            <p class="harga">Rp 15.000</p>
+          </div>
+          <input type="number" id="qty10" min="0" value="0" class="kotak-jumlah">
+        </div>
+      </div>
+
+              <div class="baris-menu">
+          <div>
+            <strong>Mix Plate</strong>
+            <p class="harga">Rp 20.000</p>
+          </div>
+          <input type="number" id="qty11" min="0" value="0" class="kotak-jumlah">
+        </div>
+      </div>
+
+      <!-- 3. KATEGORI MINUMAN (COLD & HOT) -->
+      <h4 class="judul-kategori">Minuman</h4>
+
+      <p class="sub-kategori sub-cold">Cold (Dingin)</p>
+      <div class="wadah-menu-samping">
+        <div class="baris-menu">
+          <div>
+            <strong>Es Teh Manis</strong>
+            <p class="harga">Rp 4.000</p>
+          </div>
+          <input type="number" id="qty12" min="0" value="0" class="kotak-jumlah">
+        </div>
+
+        <div class="baris-menu">
+          <div>
+            <strong>Thai Tea Original</strong>
+            <p class="harga">Rp 12.000</p>
+          </div>
+          <input type="number" id="qty13" min="0" value="0" class="kotak-jumlah">
+        </div>
+      </div>
+
+      <div class="baris-menu">
+          <div>
+            <strong>Thai Tea Creamy Cheese</strong>
+            <p class="harga">Rp 15.000</p>
+          </div>
+          <input type="number" id="qty14" min="0" value="0" class="kotak-jumlah">
+        </div>
+      </div>
+
+      <div class="baris-menu">
+          <div>
+            <strong>Chocolate Avocado</strong>
+            <p class="harga">Rp 12.000</p>
+          </div>
+          <input type="number" id="qty15" min="0" value="0" class="kotak-jumlah">
+        </div>
+      </div>
+
+      <div class="baris-menu">
+          <div>
+            <strong>Coffee Mocafrio</strong>
+            <p class="harga">Rp 10.000</p>
+          </div>
+          <input type="number" id="qty16" min="0" value="0" class="kotak-jumlah">
+        </div>
+      </div>
+
+      <div class="baris-menu">
+          <div>
+            <strong>Moccacino</strong>
+            <p class="harga">Rp 12.000</p>
+          </div>
+          <input type="number" id="qty17" min="0" value="0" class="kotak-jumlah">
+        </div>
+      </div>
+
+      <div class="baris-menu">
+          <div>
+            <strong>Coffee Bali Arabica</strong>
+            <p class="harga">Rp 12.500</p>
+          </div>
+          <input type="number" id="qty18" min="0" value="0" class="kotak-jumlah">
+        </div>
+      </div>
+
+      <div class="baris-menu">
+          <div>
+            <strong>Butter Scotch</strong>
+            <p class="harga">Rp 12.500</p>
+          </div>
+          <input type="number" id="qty19" min="0" value="0" class="kotak-jumlah">
+        </div>
+      </div>
+
+      <div class="baris-menu">
+          <div>
+            <strong>Hazzelnut Macchiato</strong>
+            <p class="harga">Rp 12.500</p>
+          </div>
+          <input type="number" id="qty20" min="0" value="0" class="kotak-jumlah">
+        </div>
+      </div>
+
+      <div class="baris-menu">
+          <div>
+            <strong>Chocolate  </strong>
+            <p class="harga">Rp 12.000</p>
+          </div>
+          <input type="number" id="qty21" min="0" value="0" class="kotak-jumlah">
+        </div>
+      </div>
+
+      <div class="baris-menu">
+          <div>
+            <strong>Matcha</strong>
+            <p class="harga">Rp 12.000</p>
+          </div>
+          <input type="number" id="qty22" min="0" value="0" class="kotak-jumlah">
+        </div>
+      </div>
+
+      <div class="baris-menu">
+          <div>
+            <strong>Mango Cheese </strong>
+            <p class="harga">Rp 12.000</p>
+          </div>
+          <input type="number" id="qty23" min="0" value="0" class="kotak-jumlah">
+        </div>
+      </div>
+
+      <div class="baris-menu">
+          <div>
+            <strong>Taro</strong>
+            <p class="harga">Rp 12.000</p>
+          </div>
+          <input type="number" id="qty24" min="0" value="0" class="kotak-jumlah">
+        </div>
+      </div>
+
+      <div class="baris-menu">
+          <div>
+            <strong>Mojito </strong>
+            <p class="harga">Rp 12.000</p>
+          </div>
+          <input type="number" id="qty25" min="0" value="0" class="kotak-jumlah">
+        </div>
+      </div>
+
+      <div class="baris-menu">
+          <div>
+            <strong>Mineral Water</strong>
+            <p class="harga">Rp 5.000</p>
+          </div>
+          <input type="number" id="qty26" min="0" value="0" class="kotak-jumlah">
+        </div>
+      </div>
+
+      <p class="sub-kategori sub-hot">Hot (Panas / Hangat)</p>
+      <div class="wadah-menu-samping">
+        <div class="baris-menu">
+          <div>
+            <strong>Teh Hangat</strong>
+            <p class="harga">Rp 3.000</p>
+          </div>
+          <input type="number" id="qty27" min="0" value="0" class="kotak-jumlah">
+        </div>
+
+        <div class="baris-menu">
+          <div>
+            <strong>Kopi Hitam Panas</strong>
+            <p class="harga">Rp 10.000</p>
+          </div>
+          <input type="number" id="qty28" min="0" value="0" class="kotak-jumlah">
+        </div>
+      </div>
+
+      <div class="baris-menu">
+          <div>
+            <strong>Kopi Gula Arem</strong>
+            <p class="harga">Rp 10.000</p>
+          </div>
+          <input type="number" id="qty29" min="0" value="0" class="kotak-jumlah">
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="kotak-total">
+        <span>Total Pembayaran:</span>
+        <strong id="totalBayar">Rp 0</strong>
+      </div>
+
+      <input type="text" id="namaPemesan" placeholder="Ketik nama pemesan / nomor meja..." class="kotak-nama">
+      <button id="btnLanjutBayar" class="tombol-wa">Lanjut ke Pembayaran</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
