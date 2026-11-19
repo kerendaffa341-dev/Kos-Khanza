@@ -770,3 +770,267 @@ body {
   cursor: pointer;
   box-shadow: 0 8px 18px rgba(22, 163, 74, 0.25);
 }
+/* === STRUK DIGITAL LANGSUNG DI WEB === */
+.kotak-struk {
+  background-color: #fbf6f0;
+  border: 1.5px solid #d6c3b1;
+  border-radius: 18px;
+  padding: 20px 16px;
+  text-align: center;
+}
+
+.struk-badge {
+  display: inline-block;
+  background-color: #dcfce7;
+  color: #15803d;
+  font-size: 11.5px;
+  font-weight: 800;
+  padding: 5px 12px;
+  border-radius: 999px;
+}
+
+.kotak-antrean {
+  background-color: #ffffff;
+  border: 1.5px dashed #6f3e1d;
+  border-radius: 14px;
+  padding: 12px;
+  margin: 12px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.kotak-antrean span {
+  font-size: 12px;
+  color: #7c685a;
+  font-weight: 600;
+}
+
+.kotak-antrean strong {
+  font-size: 22px;
+  font-weight: 800;
+  color: #43220d;
+  letter-spacing: 0.5px;
+}
+
+.struk-meta {
+  text-align: left;
+  font-size: 13px;
+  background-color: #ffffff;
+  border: 1px solid #ede2d6;
+  border-radius: 12px;
+  padding: 12px;
+  margin-bottom: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.struk-meta > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.struk-meta span {
+  color: #7c685a;
+}
+
+.struk-meta strong {
+  color: #2b1910;
+  text-align: right;
+}
+
+.btn-secondary-brown {
+  width: 100%;
+  background-color: #f5ebe0;
+  color: #4e2a14;
+  border: 1.5px solid #d6c3b1;
+  padding: 13px;
+  border-radius: 999px;
+  font-size: 14.5px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+@media print {
+  body {
+    background-color: #ffffff;
+  }
+  .tombol-kembali,
+  .btn-primary-brown,
+  .btn-secondary-brown {
+    display: none !important;
+  }
+}
+/* === PANEL KASIR (kasir.html) === */
+.kasir-shell {
+  max-width: 560px;
+}
+
+.kasir-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.kasir-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.kasir-stat-box {
+  background-color: #fbf6f0;
+  border: 1px solid #e6d7c8;
+  border-radius: 14px;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.kasir-stat-box span {
+  font-size: 12px;
+  color: #7c685a;
+}
+
+.kasir-stat-box strong {
+  font-size: 18px;
+  color: #43220d;
+}
+
+.kasir-filter {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.filter-btn {
+  flex: 1;
+  padding: 9px 10px;
+  border-radius: 999px;
+  border: 1.5px solid #d6c3b1;
+  background-color: #ffffff;
+  color: #5c3317;
+  font-size: 12.5px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.filter-btn.aktif {
+  background-color: #5c3317;
+  color: #ffffff;
+  border-color: #5c3317;
+}
+
+.kasir-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.order-card {
+  background-color: #fcf9f6;
+  border: 1.5px solid #e6d7c8;
+  border-radius: 16px;
+  padding: 14px;
+}
+
+.order-card.order-selesai {
+  opacity: 0.72;
+  background-color: #f6f3ef;
+}
+
+.order-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.order-antrean {
+  display: block;
+  font-size: 12px;
+  font-weight: 800;
+  color: #8b5329;
+}
+
+.order-nama {
+  font-size: 16px;
+  color: #2b1910;
+}
+
+.order-metode {
+  background-color: #f3e5d5;
+  color: #43220d;
+  font-size: 11.5px;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.order-waktu {
+  font-size: 12px;
+  color: #7c685a;
+  margin-top: 6px;
+}
+
+.order-rincian {
+  font-family: inherit;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #2b1910;
+  background-color: #ffffff;
+  border: 1px solid #ede2d6;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px 0;
+  white-space: pre-wrap;
+}
+
+.order-card-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.order-total {
+  font-size: 16px;
+  color: #43220d;
+}
+
+.order-btns {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-selesai-mini {
+  background-color: #5c3317;
+  color: #ffffff;
+  border: none;
+  padding: 7px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn-hapus-mini {
+  background-color: #f5ebe0;
+  color: #6f3e1d;
+  border: 1px solid #d6c3b1;
+  padding: 7px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.kasir-actions-bawah {
+  margin-top: 20px;
+}

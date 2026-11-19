@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel Kasir — Warung Makan Berkah</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="kartu-warung kasir-shell">
+    <div class="isi-konten">
+      <div class="kasir-topbar">
+        <a href="index.html" class="tombol-kembali" style="margin-bottom: 0;">← Halaman Menu</a>
+        <span class="label-pesan">Panel Kasir</span>
+      </div>
+
+      <h1 style="margin: 12px 0 4px 0; font-size: 22px;">Daftar Pesanan & Kasir</h1>
+      <p class="deskripsi" style="margin-bottom: 16px;">Pantau nomor antrean, metode bayar (QRIS / Tunai), dan status pesanan.</p>
+
+      <!-- Ringkasan Angka Kasir -->
+      <div class="kasir-stats">
+        <div class="kasir-stat-box">
+          <span>Total Pesanan</span>
+          <strong id="statJumlahOrder">0</strong>
+        </div>
+        <div class="kasir-stat-box">
+          <span>Omzet Tercatat</span>
+          <strong id="statTotalOmzet">Rp 0</strong>
+        </div>
+      </div>
+
+      <!-- Filter Status -->
+      <div class="kasir-filter">
+        <button type="button" class="filter-btn aktif" data-filter="semua" onclick="setFilter('semua')">Semua</button>
+        <button type="button" class="filter-btn" data-filter="aktif" onclick="setFilter('aktif')">Perlu Diproses</button>
+        <button type="button" class="filter-btn" data-filter="selesai" onclick="setFilter('selesai')">Selesai</button>
+      </div>
+
+      <!-- Daftar Pesanan Masuk -->
+      <div id="daftarOrderKasir" class="kasir-list"></div>
+
+      <!-- Tombol Bersihkan Riwayat -->
+      <div class="kasir-actions-bawah">
+        <button type="button" class="btn-secondary-brown" onclick="bersihkanRiwayat()">
+          Hapus Riwayat Browser Ini
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="kasir.js"></script>
+</body>
+</html>

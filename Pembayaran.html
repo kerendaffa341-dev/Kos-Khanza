@@ -1,57 +1,99 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-  <title>Pembayaran - Warung Makan Berkah</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pembayaran — Warung Makan Berkah</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="kartu-warung" style="max-width: 480px;">
+  <div class="kartu-warung">
     <div class="isi-konten">
-      <a href="index.html" class="tombol-kembali">Kembali Ubah Menu</a>
-      
-      <h1>Metode Pembayaran</h1>
-      <p class="deskripsi">Periksa rincian pesananmu lalu pilih cara pembayaran.</p>
+      <a href="index.html" class="tombol-kembali">← Kembali ke Menu</a>
 
-      <!-- Ringkasan Pesanan dari Halaman Sebelumnya -->
+      <h1 style="margin: 4px 0 6px 0; font-size: 22px;">Pembayaran Pesanan</h1>
+      <p class="deskripsi">Selesaikan pembayaran langsung di halaman ini tanpa perlu buka WhatsApp.</p>
+
+      <!-- Ringkasan Pesanan -->
       <div class="kotak-ringkasan">
-        <p><strong>Atas Nama / Meja:</strong> <span id="tampilNama">-</span></p>
-        <pre id="tampilRincian" class="teks-rincian"></pre>
-        <hr>
-        <div class="kotak-total" style="margin: 10px 0 0 0;">
-          <span>Total Tagihan:</span>
-          <strong id="tampilTotal">Rp 0</strong>
+        <div class="baris-status" style="margin-bottom: 8px;">
+          <strong style="font-size: 14px; color: #3b1f0e;">Rincian Order</strong>
+          <span id="labelPemesan" class="label-pesan">-</span>
+        </div>
+        <pre id="teksRincian" class="teks-rincian">Memuat pesanan...</pre>
+        <div class="kotak-total" style="margin-top: 12px;">
+          <span><strong>Total Bayar</strong></span>
+          <strong id="totalAkhir">Rp 0</strong>
         </div>
       </div>
 
-      <h3>Pilih Cara Bayar</h3>
+      <!-- Area Pemilihan Metode Bayar -->
+      <div id="areaPilihMetode">
+        <h3 style="font-size: 16px; margin: 0 0 10px 0;">Pilih Metode Pembayaran</h3>
 
-      <!-- Dua Pilihan Pembayaran -->
-      <div class="pilihan-bayar">
-        <div id="pilihQris" class="kartu-metode aktif">
-          <strong>Bayar via QRIS</strong>
-          <p>Scan barcode QRIS & kirim bukti</p>
+        <div class="pilihan-bayar">
+          <div id="kartuQris" class="kartu-metode aktif" onclick="pilihMetode('qris')">
+            <strong style="font-size: 15px; color: #3b1f0e;">📱 QRIS</strong>
+            <p>Scan pakai e-wallet atau m-banking</p>
+          </div>
+          <div id="kartuTunai" class="kartu-metode" onclick="pilihMetode('tunai')">
+            <strong style="font-size: 15px; color: #3b1f0e;">💵 Tunai</strong>
+            <p>Bayar uang pas/cash ke kasir atau pelayan</p>
+          </div>
         </div>
 
-        <div id="pilihPelayan" class="kartu-metode">
-          <strong>Panggil Pelayan</strong>
-          <p>Bayar tunai di meja / kasir</p>
+        <!-- Panel QRIS -->
+        <div id="panelQris" class="kotak-info-bayar">
+          <strong style="font-size: 15px; color: #3b1f0e;">Scan Kode QRIS Warung Makan Berkah</strong>
+          <p class="catatan-kecil">Buka aplikasi pembayaranmu, scan QR di bawah, dan bayar sesuai nominal:</p>
+          <strong id="nominalQris" style="display: block; font-size: 20px; color: #5c3317; margin-top: 6px;">Rp 0</strong>
+          <img src="qris.jpg" alt="QRIS Warung Makan Berkah" class="gambar-qris">
+          <p class="catatan-kecil">Setelah transfer berhasil, klik tombol konfirmasi di bawah untuk menerbitkan nomor antrean.</p>
         </div>
+
+        <!-- Panel Tunai -->
+        <div id="panelTunai" class="kotak-info-bayar" style="display: none;">
+          <strong style="font-size: 15px; color: #3b1f0e;">Pembayaran Tunai (Cash)</strong>
+          <p class="catatan-kecil">Siapkan uang tunai sebesar <strong id="nominalTunai">Rp 0</strong> dan tunjukkan nomor antrean pesananmu ke kasir atau pelayan.</p>
+        </div>
+
+        <button type="button" id="btnKonfirmasiWeb" class="btn-primary-brown" onclick="selesaikanPesananWeb()">
+          Konfirmasi Pembayaran QRIS
+        </button>
       </div>
 
-      <!-- Tampilan Khusus Jika Memilih QRIS -->
-      <div id="kotakQris" class="kotak-info-bayar">
-        <p><strong>Scan QRIS Warung Makan Berkah:</strong></p>
-        <!-- Tambahkan foto QRIS sebagai qris.jpg di folder proyek untuk menampilkan kode pembayaran. -->
-        <p class="catatan-kecil">Setelah melakukan transfer sesuai total tagihan, klik tombol hijau di bawah untuk mengirim pesanan dan lampirkan bukti bayar di WhatsApp.</p>
-      </div>
+      <!-- Area Struk / Bukti Pesanan Langsung di Web (Muncul Setelah Dikonfirmasi) -->
+      <div id="areaStruk" class="kotak-struk" style="display: none;">
+        <div class="struk-badge">✓ PESANAN TERCATAT</div>
+        <h2 style="margin: 8px 0 4px 0; font-size: 20px; color: #2b1910;">Struk Digital Warung</h2>
+        <p class="catatan-kecil" style="margin-bottom: 12px;">Tunjukkan layar ini ke kasir/pelayan jika diperlukan.</p>
 
-      <!-- Tampilan Khusus Jika Memilih Panggil Pelayan -->
-      <div id="kotakPelayan" class="kotak-info-bayar" style="display: none;">
-        <p><strong>Panggil Pelayan / Bayar Tunai</strong></p>
-        <p class="catatan-kecil">Klik tombol hijau di bawah agar pesananmu langsung masuk ke dapur dan pelayan kami segera menghampiri mejamu untuk pembayaran tunai.</p>
-      </div>
+        <div class="kotak-antrean">
+          <span>Nomor Antrean</span>
+          <strong id="nomorAntrean">-</strong>
+        </div>
 
-      <button id="btnKonfirmasiWa" class="tombol-wa">Konfirmasi Pesanan via WhatsApp</button>
+        <div class="struk-meta">
+          <div><span>Pemesan / Meja:</span> <strong id="strukNama">-</strong></div>
+          <div><span>Metode Bayar:</span> <strong id="strukMetode">-</strong></div>
+          <div><span>Status:</span> <strong id="strukStatus">-</strong></div>
+          <div><span>Waktu:</span> <strong id="strukWaktu">-</strong></div>
+        </div>
+
+        <pre id="strukRincian" class="teks-rincian" style="background: #ffffff; padding: 12px; border-radius: 10px; border: 1px solid #e6d7c8;"></pre>
+
+        <div class="kotak-total" style="margin: 12px 0 16px 0;">
+          <span><strong>Total Tagihan</strong></span>
+          <strong id="strukTotal">Rp 0</strong>
+        </div>
+
+        <button type="button" class="btn-primary-brown" onclick="window.print()" style="margin-bottom: 10px;">
+          Simpan / Cetak Struk (PDF)
+        </button>
+        <button type="button" class="btn-secondary-brown" onclick="pesanLagi()">
+          Buat Pesanan Baru
+        </button>
+      </div>
     </div>
   </div>
 
